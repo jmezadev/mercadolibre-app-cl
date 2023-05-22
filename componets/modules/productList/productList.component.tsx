@@ -8,12 +8,21 @@ import {ProductListProps, ProductType} from "@/componets/modules/productList/pro
 import {Empty} from 'antd';
 
 const ProductListComponent = (props: ProductListProps) => {
-    const {products, searched} = props;
+    const {query} = props;
+
+    const [products, setProducts] = useState<ProductType[]>([]);
+    const [searched, setSearched] = useState<string>('');
 
     // const [products, setProducts] = useState<ProductType[]>([]);
     const [productsToShow, setProductsToShow] = useState<ProductType[]>([]);
     const [productsCountTotal, setProductsCountTotal] = useState<number>(0);
     const [currentPage, setCurrentPage] = useState<number>(1);
+
+    const searchProducts = async () => {
+        const productsList: ProductType[] = await getProducts(query);
+        setProducts(productsList);
+        setSearched(query);
+    }
 
     let perPage = 12;
 
@@ -36,6 +45,9 @@ const ProductListComponent = (props: ProductListProps) => {
         console.log(currentPage);
     }, [products])
 
+    useEffect(() => {
+        searchProducts();
+    }, [query])
 
     return (
         <>

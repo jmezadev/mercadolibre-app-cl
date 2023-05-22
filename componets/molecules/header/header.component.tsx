@@ -7,7 +7,7 @@ import {HeaderProps} from "@/componets/molecules/header/header.model";
 import { Col, Row } from 'antd';
 
 const HeaderComponent = (props: HeaderProps) => {
-    const { setProducts, setSearched } = props;
+    const { query } = props;
 
     return (
         <>
@@ -17,7 +17,7 @@ const HeaderComponent = (props: HeaderProps) => {
                         <Logo />
                     </Col>
                     <Col xs={{span: 12}} md={{span: 19}} style={{display: 'flex', justifyContent: 'center'}}>
-                        <Search setProducts={setProducts} setSearched={setSearched} />
+                        <Search query={query} />
                     </Col>
                     <Col xs={{span: 4}} md={{span: 1}} style={{display: 'flex', justifyContent: 'center'}}>
                         <ShoppingCart />

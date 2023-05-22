@@ -1,16 +1,13 @@
 import Header from "@/componets/molecules/header/header.component";
-import {useEffect, useState} from "react";
-import ProductList from "@/componets/modules/productList/productList.component";
-import {ProductType} from "@/componets/modules/productList/producList.model";
+import {Empty} from "antd";
 
 const Home = () => {
-    const [products, setProducts] = useState<ProductType[]>([]);
-    const [searched, setSearched] = useState<string>('');
-
     return (
         <>
-            <Header setProducts={setProducts} setSearched={setSearched} />
-            <ProductList products={products} searched={searched} />
+            <Header />
+            <div className="container">
+                <Empty description={<span>Realiza una búsqueda</span>} />
+            </div>
         </>
     )
 }

@@ -1,5 +1,3 @@
-import {Dispatch, SetStateAction} from "react";
-
 export interface ProductResponse {
     site_id:                   SiteID;
     country_default_time_zone: string;
@@ -385,8 +383,7 @@ export interface The176069919895 {
 }
 
 export interface ProductListProps {
-    products: ProductType[];
-    searched: string;
+    query: string;
 }
 
 export interface ProductProps {

@@ -6,4 +6,7 @@ export const GlobalStyles = css.global`
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
     }
+    .container {
+      padding: 20px;
+    }
 `

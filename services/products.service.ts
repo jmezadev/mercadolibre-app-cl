@@ -21,6 +21,40 @@ export const getProducts = async (search: string) => {
         })
 }
 
-export const getProductDetail = () => {
+/**
+ * Get product details from API.
+ *
+ * @param productId
+ */
+export const getProductDetail = (productId: string) => {
+    return axios
+        .get(`${API_DOMAIN_URL}` + 'items/' + productId)
+        .then((res) => {
+            // success
+            return res.data;
+        })
+        .catch((error) => {
+            // error
+            console.log(error);
+            return [];
+        })
+}
 
+/**
+ * Get product description from API.
+ *
+ * @param productId
+ */
+export const getProductDescription = (productId: string) => {
+    return axios
+        .get(`${API_DOMAIN_URL}` + 'items/' + productId + '/description')
+        .then((res) => {
+            // success
+            return res.data.plain_text;
+        })
+        .catch((error) => {
+            // error
+            console.log(error);
+            return [];
+        })
 }

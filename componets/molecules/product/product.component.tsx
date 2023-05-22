@@ -9,23 +9,25 @@ const ProductComponent = (props: ProductProps) => {
 
     return (
         <>
-            <div className="product-container">
-                <Card
-                    className="product-card"
-                    hoverable
-                    bordered
-                    style={{width: 320}}
-                    actions={[
-                        <CardAction key={product.id} product={product} />,
-                    ]}
-                >
-                    <div className="product-image-container">
-                        <img alt={product.title} src={product.thumbnail} className="product-image" />
-                    </div>
-                    <p className="product-title" title={product.title}>{product.title}</p>
-                    <p className="product-price">$ {formatNumber(product.price)} <small>{product.currency_id}</small></p>
-                </Card>
-            </div>
+            <a href={'/product/' + product.id} target="_blank">
+                <div className="product-container">
+                    <Card
+                        className="product-card"
+                        hoverable
+                        bordered
+                        style={{width: 320}}
+                        actions={[
+                            <CardAction key={product.id} product={product} />,
+                        ]}
+                    >
+                        <div className="product-image-container">
+                            <img alt={product.title} src={product.thumbnail} className="product-image" />
+                        </div>
+                        <p className="product-title" title={product.title}>{product.title}</p>
+                        <p className="product-price">$ {formatNumber(product.price)} <small>{product.currency_id}</small></p>
+                    </Card>
+                </div>
+            </a>
 
             <style jsx>{ProductStyles}</style>
         </>

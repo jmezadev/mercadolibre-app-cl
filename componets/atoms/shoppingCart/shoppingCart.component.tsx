@@ -42,7 +42,6 @@ const ShoppingCartComponent = () => {
                 placement="right"
                 onClose={closeShoppingCart}
                 open={open}
-                size="large"
                 footer={
                     <div className="shopping-cart-products-footer">
                         <span>

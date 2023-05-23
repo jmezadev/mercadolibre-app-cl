@@ -42,7 +42,8 @@ export const ProductDetailsStyles = css`
   }
 
   .product-details-preview-image {
-    margin: 0 10px;
+    margin: 0 2px;
+    display: inline-block;
   }
 
   .product-details-preview-images-container {

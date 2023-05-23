@@ -45,15 +45,17 @@ const ProductDetailsComponent = (props: ProductDetailProps) => {
                         <div className="product-details-preview-images-container">
                             <Image.PreviewGroup>
                                 {
-                                    productPictures.map((picture: Picture, key: number) => {
-                                        return <Image
-                                            key={key}
-                                            rootClassName="product-details-preview-image"
-                                            width={40}
-                                            height={40}
-                                            src={picture.url}
-                                            alt={product?.title}
-                                        />
+                                    productPictures.slice(0, 6).map((picture: Picture, key: number) => {
+                                        return (
+                                            <div key={key} className="product-details-preview-image">
+                                                <Image
+                                                    width={40}
+                                                    height={40}
+                                                    src={picture.url}
+                                                    alt={product?.title}
+                                                />
+                                            </div>
+                                        )
                                     })
                                 }
                             </Image.PreviewGroup>
